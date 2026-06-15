@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Hospital</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="faixaLogo">
+            <div class="containerLogo">
+                <p class="logo">SIRENE</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class='w-100' preserveAspectRatio="none"
+                style="max-height: 3rem;">
+                <path fill="#2A9D8F" fill-opacity=".5"
+                    d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,160C672,139,768,117,864,117.3C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                </path>
+                <path fill="#2A9D8F" fill-opacity=".5"
+                    d="M0,160L48,133.3C96,107,192,53,288,74.7C384,96,480,192,576,240C672,288,768,288,864,277.3C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                </path>
+                <path fill="#2A9D8F" fill-opacity="1"
+                    d="M0,320L48,314.7C96,309,192,299,288,245.3C384,192,480,96,576,64C672,32,768,64,864,85.3C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                </path>
+            </svg>
+        </div>
+        <div class="menu">
+            <svg height="20px" width="20px" class="iconMenu" version="1.1" id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 155.139 155.139" xml:space="preserve" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <g>
+                            <polygon style="fill:#ffffff;"
+                                points="155.139,77.566 79.18,1.596 79.18,45.978 0,45.978 0,109.155 79.18,109.155 79.18,153.542 ">
+                            </polygon>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+
+            <div class="itensMenu">
+                <a class="itemMenu itemMenuOrdem1" href="../hospital/usuario.html">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="icone-cabecalho">
+                            <defs>
+                                <mask id="badge-cutout">
+                                    <rect width="24" height="24" fill="white" />
+                                    <circle cx="18" cy="6" r="5.5" fill="black" />
+                                </mask>
+                            </defs>
+
+                            <g mask="url(#badge-cutout)">
+                                <circle cx="11" cy="12" r="9.5" />
+                                <circle cx="11" cy="9" r="3.5" />
+                                <path d="M4.5 18.9a7.5 7.5 0 0 1 13 0" />
+                            </g>
+
+                            <circle cx="18" cy="6" r="4" />
+                            <path d="M18 4 v4 M16 6 h4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p>Usuario</p>
+                    </div>
+                </a>
+                <a class="itemMenu itemMenuOrdem2">
+                    <div class="icon"></div>
+                    <div>
+                        <p>Listar</p>
+                    </div>
+                </a>
+                <a class="itemMenu itemMenuOrdem3">
+                    <div class="icon"></div>
+                    <div>
+                        <p>Listar 2</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="esmaeceTela"></div>
+
+    </header>
+
+    <main>
+
+        <navbar class="navbar">
+            <!-- <div>
+                <t>2</t>
+            </div> -->
+            <div class="nomeHospital">
+                <h1>Hospital: Santa Eufigenia </h1>
+            </div>
+            <div class="containerAvisoLogin">
+
+                <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                    text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                    clip-rule="evenodd" viewBox="0 0 512 512" width="18px" height="18px">
+                    <path
+                        d="M256 0c70.686 0 134.69 28.658 181.016 74.984C483.342 121.31 512 185.314 512 256c0 70.686-28.658 134.69-74.984 181.016C390.69 483.342 326.686 512 256 512c-70.686 0-134.69-28.658-181.016-74.984C28.658 390.69 0 326.686 0 256c0-70.686 28.658-134.69 74.984-181.016C121.31 28.658 185.314 0 256 0zm19.546 302.281c-.88 22.063-38.246 22.092-39.099-.007-3.779-37.804-13.444-127.553-13.136-163.074.312-10.946 9.383-17.426 20.99-19.898 3.578-.765 7.512-1.136 11.476-1.132 3.987.007 7.932.4 11.514 1.165 11.989 2.554 21.402 9.301 21.398 20.444l-.044 1.117-13.099 161.385zM256 341.492c14.453 0 26.168 11.717 26.168 26.171 0 14.453-11.715 26.167-26.168 26.167s-26.171-11.714-26.171-26.167c0-14.454 11.718-26.171 26.171-26.171zm0-312.028c125.114 0 226.536 101.422 226.536 226.536S381.114 482.536 256 482.536 29.464 381.114 29.464 256 130.886 29.464 256 29.464z" />
+                </svg>
+                <p>Faça login para ter acesso completo aos dados, alterar e excluir.</p>
+            </div>
+            <div class="containerLeftNavbar">
+                <div class="containerHora">
+                    <svg class="iconeCabecalho" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icone-cabecalho">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <p>14:45</p>
+                </div>
+                <div class="containerUser">
+                    <svg class="iconeCabecalho" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icone-cabecalho">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="10" r="3"></circle>
+                        <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+                    </svg>
+                    <p>Bom dia, <strong>-</strong></p>
+                </div>
+            </div>
+        </navbar>
+        <div class="painelEmergencias">
+            <div class="cabecalhoEmergencias">
+                <div class="titulo3">
+                    <h3>Emergências Lançadas</h3>
+                </div>
+
+                <div class="containerFiltro">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+
+                    <p>Prioridade mais alta</p>
+                </div>
+            </div>
+
+            <div class="Emergencias">
+                <div class="cardEmergencia">
+
+                    <!-- <div class="gravidade grave"></div> -->
+                    <div class="marcadorGravidade grave">
+                        <div class="triangulo"></div>
+                    </div>
+
+                    <div class="conteudoCard">
+                        <div class="headCard">
+
+                            <input type="checkbox" id="2" class="escondido">
+                            <label class="notifContainer" for="2">
+                                <div class="notif">
+                                    <div class="iconNotif">
+                                        <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                                            text-rendering="geometricPrecision" image-rendering="optimizeQuality"
+                                            fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512" width="20px"
+                                            height="20px">
+                                            <path fill="#A82C1F" fill-rule="nonzero"
+                                                d="M256 0c70.686 0 134.69 28.658 181.016 74.984C483.342 121.31 512 185.314 512 256c0 70.686-28.658 134.69-74.984 181.016C390.69 483.342 326.686 512 256 512c-70.686 0-134.69-28.658-181.016-74.984C28.658 390.69 0 326.686 0 256c0-70.686 28.658-134.69 74.984-181.016C121.31 28.658 185.314 0 256 0z" />
+                                            <circle fill="#D03827" cx="256" cy="256" r="226.536" />
+                                            <path fill="#fff" fill-rule="nonzero"
+                                                d="M275.546 302.281c-.88 22.063-38.246 22.092-39.099-.007-3.779-37.804-13.444-127.553-13.136-163.074.312-10.946 9.383-17.426 20.99-19.898 3.578-.765 7.512-1.136 11.476-1.132 3.987.007 7.932.4 11.514 1.165 11.989 2.554 21.402 9.301 21.398 20.444l-.044 1.117-13.099 161.385zm-19.55 39.211c14.453 0 26.168 11.717 26.168 26.171 0 14.453-11.715 26.167-26.168 26.167s-26.171-11.714-26.171-26.167c0-14.454 11.718-26.171 26.171-26.171z" />
+                                        </svg>
+                                    </div>
+                                    <p> NOVA EMERGENCIA
+                                    </p>
+                                </div>
+                            </label>
+                            <div class="statusCabecalhoCard">
+                                <div class="iconStatus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="40px"
+                                        height="40px">
+                                        <defs>
+                                            <linearGradient id="gradient-cores" x1="1" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#ef4444" />
+                                                <stop offset="30%" stop-color="#f97316" />
+                                                <stop offset="70%" stop-color="#eab308" />
+                                                <stop offset="100%" stop-color="#facc15" />
+                                            </linearGradient>
+                                        </defs>
+
+                                        <g fill="none" stroke="url(#gradient-cores)" stroke-width="26"
+                                            stroke-linecap="round">
+
+                                            <circle cx="250" cy="250" r="75" />
+
+                                            <path d="M 265 67 A 185 185 0 0 1 426 310" />
+
+                                            <path d="M 390 355 A 185 185 0 0 1 125 350" />
+
+                                            <path d="M 108 300 A 185 185 0 0 1 235 67" />
+
+                                        </g>
+                                    </svg>
+                                </div>
+                                <p> <strong> Status: </strong> Verificando</p>
+                            </div>
+                            <div class="tempo">
+                                <svg width="20px" height="20px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <g transform="translate(16 16)">
+                                            <circle cx="80" cy="80" r="74"
+                                                style="fill:none;stroke:#000000;stroke-width:12;stroke-linejoin:round;stroke-opacity:1">
+                                            </circle>
+                                            <path d="M80 30v50l40 32"
+                                                style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p>Há 2 minutos</p>
+                            </div>
+                        </div>
+                        <div class="infos">
+                            <div class="info">
+                                <div class="iconeInfo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                        fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div class="containerTextoInfo">
+                                    <div class="flexColumn">
+                                        <strong>Local </strong>
+                                        <p> Rua do Boi, 99 </p>
+                                    </div>
+                                    <div class="flexColumn">
+                                        <strong>Ponto Referência </strong>
+                                        <p> Perto da Venda do Rogério, onde há bla bla bla </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="info">
+                                <div class="iconeInfo">
+                                    <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 480.543 480.543"
+                                        xml:space="preserve" width="30px" height="30px">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <g>
+                                                <g>
+                                                    <path
+                                                        d="M225.278,278.426c0-48.641-39.572-88.213-88.214-88.213c-48.641,0-88.212,39.572-88.212,88.213 c0,14.254,3.401,27.727,9.431,39.654l78.781,162.463l78.795-162.488C221.88,306.133,225.278,292.669,225.278,278.426z M137.064,327.243c-26.917,0-48.817-21.9-48.817-48.817s21.9-48.817,48.817-48.817c26.918,0,48.817,21.9,48.817,48.817 S163.982,327.243,137.064,327.243z">
+                                                    </path>
+                                                    <path
+                                                        d="M387.021,0c-24.63,0-44.669,20.038-44.669,44.668c0,7.218,1.723,14.04,4.776,20.081l39.893,82.267l39.899-82.28 c3.049-6.037,4.77-12.855,4.77-20.067C431.69,20.038,411.65,0,387.021,0z M387.021,69.388c-13.631,0-24.72-11.089-24.72-24.72 c0-13.63,11.089-24.72,24.72-24.72c13.629,0,24.719,11.09,24.719,24.72C411.74,58.299,400.65,69.388,387.021,69.388z">
+                                                    </path>
+                                                    <path
+                                                        d="M348.116,289.787c-1.812-8.523-4.166-16.875-7.131-25.075c-3.974-10.987-8.74-21.724-12.391-32.836 c-6.823-20.771,4.948-38.105,7.16-41.256c3.876-5.517,8.408-10.58,13.19-15.322c9.207-9.128,19.361-17.288,29.984-24.803 c-1.316-2.039-2.591-4.1-3.805-6.199c-15.279,5.99-93.854,33.452-91.938,94.121c0.384,12.162,5.083,23.737,7.979,35.526 c1.395,5.681,2.605,11.412,3.345,17.218c0.319,2.614,0.515,5.243,0.729,7.87c0.006-0.02,0.004-0.034-0.008-0.045 c0.007,0.076,0.202,8.326-0.164,11.9c-1.147,11.189-2.799,22.494-7.516,32.758c-4.387,9.543-11.006,17.842-19.193,24.402 c-18.716,14.994-43.514,20.988-66.913,23.398c-1.114,0.117-2.228,0.217-3.342,0.314l-41.779,86.152 c20.614-1.281,41.175-4.102,61.235-9.039c23.607-5.811,46.613-14.588,67.227-27.598c20.596-12.996,38.308-30.578,50.099-51.984 c12.335-22.391,17.277-48.038,16.225-73.452C350.752,307.156,349.928,298.307,348.116,289.787z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="containerTextoInfo infoTempo">
+                                    <div class="flexColumn">
+                                        <strong>Distância </strong>
+                                        <p> 3km </p>
+                                    </div>
+                                    <div class="flexColumn">
+                                        <strong>Tempo Estimado </strong>
+                                        <p> 3 min </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="detalhes">
+                            <div class="botaoDetalhe">
+                                <t class="textoDetalhes">Verificar Detalhes</t>
+                            </div>
+                            <!-- <div class="esmaeceTela"></div> -->
+                            <!-- <div class="containerImagemDetalhes">
+                                <img class="imagemDetalhes" src="../../static/images/more-info-icon.png">
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
