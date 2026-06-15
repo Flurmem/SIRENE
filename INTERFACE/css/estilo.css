@@ -224,7 +224,12 @@ header {
     gap: 2.5rem;
     padding: 1rem 0;
     justify-items: center;
+    place-content: start;
 
+}
+
+.Emergencias:has(> :nth-child(2)){
+    place-content: center;
 }
 
 @media screen and (max-width: 800px) {
