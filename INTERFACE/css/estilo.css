@@ -15,7 +15,7 @@
 
 }
 
-input::placeholder{
+input::placeholder, button{
     font-family: Dosis;
 }
 
@@ -239,9 +239,9 @@ header {
     }
 }
 
+
 .cardEmergencia {
     font-size: .9rem;
-    border: #2A9D8F;
     box-shadow: 0px 0px 20px 0px rgb(212 212 212);
     display: flex;
     aspect-ratio: 12/8.5;
@@ -746,13 +746,12 @@ header {
     display: flex;
     position: relative;
     max-height: 90%;
+    overflow: hidden;
 }
 
 .containerCadastroUsuario {
     width: 50%;
     height: 100%;
-    /* min-height: 0; */
-    /* min-width: 0; */
     padding: 3rem;
     display: flex;
     justify-content: center;
@@ -760,8 +759,9 @@ header {
     align-items: center;
     /* flex: 1; */
     gap: 1.5rem;
-    animation: deslizaPraEsquerdaAparece 0.6s ease-in-out;
-    z-index: 10;
+    z-index: 101;
+
+    transition: all 0.6s ease-in-out;
 }
 
 .containerLoginUsuario {
@@ -794,7 +794,7 @@ header {
     flex-direction: column;
     gap: 2rem;
     color: white;
-    z-index: 100;
+    z-index: 200;
 }
 
 
@@ -803,22 +803,12 @@ header {
 }
 
 #mudaPraLogin:checked~.containerCadastroUsuario {
-    animation: deslizaPraDireitaEsmaece 0.6s ease-in-out forwards;
+    opacity: 0;
+    transform: translateX(20rem);
+    z-index: -1;
 }
 
-@keyframes deslizaPraEsquerdaAparece {
-    0% {
-        opacity: 0;
-        transform: translate(20rem);
-    }
-
-    100% {
-        transform: translateX(0rem);
-        opacity: 1;
-    }
-}
-
-@keyframes deslizaPraDireitaEsmaece {
+/* @keyframes deslizaPraDireitaEsmaece {
     0% {
         opacity: 1;
     }
@@ -828,7 +818,7 @@ header {
         opacity: 0;
         z-index: -1;
     }
-}
+} */
 
 .mudapraLogin>* {
     cursor: pointer;
@@ -980,4 +970,246 @@ header {
 
 .flex-start{
     justify-content: start;
+}
+
+.sectionImagens{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 100;
+}
+
+:root{
+    --opacidadeImagemFundo: 0.2;
+}
+
+.imagemFundo{
+    /* transform: rotate(-45deg); */
+    position: absolute;
+    width: 10rem;
+    opacity: var(--opacidadeImagemFundo);
+    z-index: -100;
+}
+
+.cantoDireitoSuperior{
+    right: 5%;
+    top: 2%;
+    animation: deslizaBaixoAparece 0.7s ease-in-out;
+}
+
+
+.cantoEsquerdoInferior{
+    bottom: 2%;
+    left: 5%;
+    animation: deslizaCimaAparece 0.7s ease-in-out;
+}
+
+@keyframes deslizaBaixoAparece {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: var(--opacidadeImagemFundo);
+    }
+    
+}
+
+@keyframes deslizaBaixoDesaparece {
+    0% {
+        transform: translateY(0);
+        opacity: var(--opacidadeImagemFundo);
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes deslizaCimaAparece {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: var(--opacidadeImagemFundo);
+    }
+    
+}
+
+@keyframes deslizaCimaDesaparece {
+    0%{
+        transform: translateY(0px);
+        opacity: var(--opacidadeImagemFundo);
+    }
+    100%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    
+}
+
+#mudaPraLogin:checked~ .sectionImagens > div > .cantoDireitoSuperior {
+    animation: deslizaBaixoDesaparece 0.3s ease-in-out forwards;
+}
+
+#mudaPraLogin:checked~ .sectionImagens > div > .cantoEsquerdoInferior {
+    animation: deslizaCimaDesaparece 0.3s ease-in-out forwards;
+}
+
+
+.p-relative{
+    position: relative;
+}
+
+.ativaModal{
+    display: none;
+}
+
+.containerModal{
+    display: flex;
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundoEsmaecido{
+    background-color: rgb(63, 63, 63);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: fixed;
+    z-index: 1;
+}
+
+
+.ativaModal:checked +.containerModal > .fundoEsmaecido{
+    opacity: .8;
+}
+
+.ativaModal:checked + .containerModal{
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.conteudoModal{
+    width: 95%;
+    height: 90%;
+    background-color: rgb(245, 245, 245);
+    z-index: 2;
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    cursor: pointer;
+}
+
+.cabecalhoModal{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.15rem;
+}
+
+.cabecalhoSuperior{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(229, 229, 229);
+    padding-bottom: .5rem;
+}
+
+.cabecalhoInferior{
+    padding: .5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.padraoFundo{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 0px rgb(212 212 212);
+}
+
+
+.conteudoEmergencia{
+    padding-top: .5rem;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    gap: 1rem;
+    flex: 1;
+}
+
+
+.dadosEmergencia{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+}
+
+.dadosEmergencia > *{
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.mapaEmergencia{
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 60%; */
+    flex: 1;
+}
+
+.topicos{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+}
+
+.detalhesAmbulancia{
+    flex: 1;
+}
+
+.botao{
+    background-color: #2A9D8F;
+    padding: .5rem 1.5rem;
+    color: white;
+    border-radius: 6px;
+    transition: transform 0.15s ease-in-out;
+    box-shadow: 3px 3px 2px 0px #7f7f7f;
+    font-size: .9rem;
+}
+
+.botao:hover{
+    transform: scale(1.05);
+
+}
+
+.titulo{
+    font-size: 1.3rem;
+    text-decoration: solid;
+
+}
+
+.topicos > div >.infos > .info > .containerTextoInfo > div > p{
+    font-size: 1.2rem;
+}
+
+.topicos > div >.infos > .info > .containerTextoInfo p {
+    white-space: pre-wrap;
 }
