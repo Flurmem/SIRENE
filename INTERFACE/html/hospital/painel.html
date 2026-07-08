@@ -11,6 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="../../js/mapa.js"></script>
 
 </head>
 
@@ -163,219 +170,262 @@
 
                             <div class="conteudoModal">
                                 <div class="cabecalhoModal">
+
                                     <div class="cabecalhoSuperior">
                                         <label for="modal1" class="botao"> <strong>Voltar ao Painel</strong></label>
                                         <div> Protocolo de Atendimento: #434637 </div>
                                     </div>
                                     <div class="cabecalhoInferior">
-                                        <div>
+                                        <div class="flex">
+                                            <div class="circulo grave">
+                                                <div></div>
+                                            </div>
                                             <p><strong>Emergencia Grave</strong></p>
                                         </div>
                                         <div>
                                             <p><strong>Status: Em Atendimento</strong></p>
                                         </div>
-                                        <div>
+                                        <div class="flex">
                                             <p><strong>Reportado as: 19:42</strong></p>
+                                            <svg class="" xmlns="http://www.w3.org/2000/svg" width="20px" height="20"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="conteudoEmergencia">
-                                    <div class="mapaEmergencia padraoFundo">
-                                        <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="30" height="30" fill="none" stroke="black"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path
-                                                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                                                <circle cx="12" cy="10" r="3" />
-                                                            </svg>
-                                        </div>
+                                    <div class="mapaEmergencia padraoFundo" style="padding: 0;">
+                                        <div id="meuMapa" style="width: 100%; height: 100%; border-radius: 1rem;"></div>
                                     </div>
                                     <div class="dadosEmergencia">
                                         <div class="topicos padraoFundo">
                                             <div class="titulo">
                                                 <strong>Dados Acidente</strong>
                                             </div>
-                                            <div>
-                                                <div class="infos">
-                                                    <div class="info">
-                                                        <div class="iconeInfo">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="30" height="30" fill="none" stroke="black"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path
-                                                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                                                <circle cx="12" cy="10" r="3" />
-                                                            </svg>
-                                                        </div>
-                                                        <div class="containerTextoInfo">
-                                                            <div class="flexColumn">
-                                                                <strong>Local </strong>
-                                                                <p> Rua do Boi, 99 </p>
-                                                            </div>
-                                                            <div class="flexColumn">
-                                                                <strong>Ponto Referência </strong>
-                                                                <p> Perto da Venda do Rogério, onde há bla bla blsdsdsdsa onde há bla bla blsdsdsdsaonde há bla bla blsdsdsdsaonde há bla bla blsdsdsdsaonde há bla bla blsdsdsdsa</p>
-                                                            </div>
-
-                                                        </div>
-
+                                            <div class="infos fgrow1">
+                                                <div class="info fgrow1">
+                                                    <div class="iconeInfo">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            width="30" height="30" fill="none" stroke="black"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                                            <circle cx="12" cy="10" r="3" />
+                                                        </svg>
                                                     </div>
-                                                    <div class="info">
-                                                        <div class="iconeInfo">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="30" height="30" fill="none" stroke="black"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
-                                                                </path>
-                                                                <circle cx="9" cy="7" r="4"></circle>
-                                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                                            </svg>
+                                                    <div class="containerTextoInfo">
+                                                        <div class="flexColumn">
+                                                            <strong>Local </strong>
+                                                            <p> Rua do Boi, 99 </p>
                                                         </div>
-                                                        <div class="containerTextoInfo">
-                                                            <div class="flexColumn">
-                                                                <strong>Número de Vítimas: </strong>
-                                                                <p> 3</p>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="iconeInfo">
-                                                            <svg fill="#000000" version="1.1" id="Capa_1"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                viewBox="0 0 480.543 480.543" xml:space="preserve"
-                                                                width="30px" height="30px">
-                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                                    stroke-linejoin="round">
-                                                                </g>
-                                                                <g id="SVGRepo_iconCarrier">
-                                                                    <g>
-                                                                        <g>
-                                                                            <path
-                                                                                d="M225.278,278.426c0-48.641-39.572-88.213-88.214-88.213c-48.641,0-88.212,39.572-88.212,88.213 c0,14.254,3.401,27.727,9.431,39.654l78.781,162.463l78.795-162.488C221.88,306.133,225.278,292.669,225.278,278.426z M137.064,327.243c-26.917,0-48.817-21.9-48.817-48.817s21.9-48.817,48.817-48.817c26.918,0,48.817,21.9,48.817,48.817 S163.982,327.243,137.064,327.243z">
-                                                                            </path>
-                                                                            <path
-                                                                                d="M387.021,0c-24.63,0-44.669,20.038-44.669,44.668c0,7.218,1.723,14.04,4.776,20.081l39.893,82.267l39.899-82.28 c3.049-6.037,4.77-12.855,4.77-20.067C431.69,20.038,411.65,0,387.021,0z M387.021,69.388c-13.631,0-24.72-11.089-24.72-24.72 c0-13.63,11.089-24.72,24.72-24.72c13.629,0,24.719,11.09,24.719,24.72C411.74,58.299,400.65,69.388,387.021,69.388z">
-                                                                            </path>
-                                                                            <path
-                                                                                d="M348.116,289.787c-1.812-8.523-4.166-16.875-7.131-25.075c-3.974-10.987-8.74-21.724-12.391-32.836 c-6.823-20.771,4.948-38.105,7.16-41.256c3.876-5.517,8.408-10.58,13.19-15.322c9.207-9.128,19.361-17.288,29.984-24.803 c-1.316-2.039-2.591-4.1-3.805-6.199c-15.279,5.99-93.854,33.452-91.938,94.121c0.384,12.162,5.083,23.737,7.979,35.526 c1.395,5.681,2.605,11.412,3.345,17.218c0.319,2.614,0.515,5.243,0.729,7.87c0.006-0.02,0.004-0.034-0.008-0.045 c0.007,0.076,0.202,8.326-0.164,11.9c-1.147,11.189-2.799,22.494-7.516,32.758c-4.387,9.543-11.006,17.842-19.193,24.402 c-18.716,14.994-43.514,20.988-66.913,23.398c-1.114,0.117-2.228,0.217-3.342,0.314l-41.779,86.152 c20.614-1.281,41.175-4.102,61.235-9.039c23.607-5.811,46.613-14.588,67.227-27.598c20.596-12.996,38.308-30.578,50.099-51.984 c12.335-22.391,17.277-48.038,16.225-73.452C350.752,307.156,349.928,298.307,348.116,289.787z">
-                                                                            </path>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-                                                        <div class="containerTextoInfo infoTempo">
-                                                            <div class="flexColumn">
-                                                                <strong>Distância </strong>
-                                                                <p> 3km </p>
-                                                            </div>
-                                                            <div class="flexColumn">
-                                                                <strong>Tempo Estimado </strong>
-                                                                <p> 3 min </p>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="iconeInfo">
-                                                            <svg fill="#000000" version="1.1" id="Capa_1"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                viewBox="0 0 480.543 480.543" xml:space="preserve"
-                                                                width="30px" height="30px">
-                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                                    stroke-linejoin="round">
-                                                                </g>
-                                                                <g id="SVGRepo_iconCarrier">
-                                                                    <g>
-                                                                        <g>
-                                                                            <path
-                                                                                d="M225.278,278.426c0-48.641-39.572-88.213-88.214-88.213c-48.641,0-88.212,39.572-88.212,88.213 c0,14.254,3.401,27.727,9.431,39.654l78.781,162.463l78.795-162.488C221.88,306.133,225.278,292.669,225.278,278.426z M137.064,327.243c-26.917,0-48.817-21.9-48.817-48.817s21.9-48.817,48.817-48.817c26.918,0,48.817,21.9,48.817,48.817 S163.982,327.243,137.064,327.243z">
-                                                                            </path>
-                                                                            <path
-                                                                                d="M387.021,0c-24.63,0-44.669,20.038-44.669,44.668c0,7.218,1.723,14.04,4.776,20.081l39.893,82.267l39.899-82.28 c3.049-6.037,4.77-12.855,4.77-20.067C431.69,20.038,411.65,0,387.021,0z M387.021,69.388c-13.631,0-24.72-11.089-24.72-24.72 c0-13.63,11.089-24.72,24.72-24.72c13.629,0,24.719,11.09,24.719,24.72C411.74,58.299,400.65,69.388,387.021,69.388z">
-                                                                            </path>
-                                                                            <path
-                                                                                d="M348.116,289.787c-1.812-8.523-4.166-16.875-7.131-25.075c-3.974-10.987-8.74-21.724-12.391-32.836 c-6.823-20.771,4.948-38.105,7.16-41.256c3.876-5.517,8.408-10.58,13.19-15.322c9.207-9.128,19.361-17.288,29.984-24.803 c-1.316-2.039-2.591-4.1-3.805-6.199c-15.279,5.99-93.854,33.452-91.938,94.121c0.384,12.162,5.083,23.737,7.979,35.526 c1.395,5.681,2.605,11.412,3.345,17.218c0.319,2.614,0.515,5.243,0.729,7.87c0.006-0.02,0.004-0.034-0.008-0.045 c0.007,0.076,0.202,8.326-0.164,11.9c-1.147,11.189-2.799,22.494-7.516,32.758c-4.387,9.543-11.006,17.842-19.193,24.402 c-18.716,14.994-43.514,20.988-66.913,23.398c-1.114,0.117-2.228,0.217-3.342,0.314l-41.779,86.152 c20.614-1.281,41.175-4.102,61.235-9.039c23.607-5.811,46.613-14.588,67.227-27.598c20.596-12.996,38.308-30.578,50.099-51.984 c12.335-22.391,17.277-48.038,16.225-73.452C350.752,307.156,349.928,298.307,348.116,289.787z">
-                                                                            </path>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-                                                        <div class="containerTextoInfo infoTempo">
-                                                            <div class="flexColumn">
-                                                                <strong>Distância </strong>
-                                                                <p> 3km </p>
-                                                            </div>
-                                                            <div class="flexColumn">
-                                                                <strong>Tempo Estimado </strong>
-                                                                <p> 3 min </p>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="info">
-                                                        <div class="iconeInfo">
-                                                            <svg fill="#000000" version="1.1" id="Capa_1"
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                viewBox="0 0 480.543 480.543" xml:space="preserve"
-                                                                width="30px" height="30px">
-                                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                                    stroke-linejoin="round">
-                                                                </g>
-                                                                <g id="SVGRepo_iconCarrier">
-                                                                    <g>
-                                                                        <g>
-                                                                            <path
-                                                                                d="M225.278,278.426c0-48.641-39.572-88.213-88.214-88.213c-48.641,0-88.212,39.572-88.212,88.213 c0,14.254,3.401,27.727,9.431,39.654l78.781,162.463l78.795-162.488C221.88,306.133,225.278,292.669,225.278,278.426z M137.064,327.243c-26.917,0-48.817-21.9-48.817-48.817s21.9-48.817,48.817-48.817c26.918,0,48.817,21.9,48.817,48.817 S163.982,327.243,137.064,327.243z">
-                                                                            </path>
-                                                                            <path
-                                                                                d="M387.021,0c-24.63,0-44.669,20.038-44.669,44.668c0,7.218,1.723,14.04,4.776,20.081l39.893,82.267l39.899-82.28 c3.049-6.037,4.77-12.855,4.77-20.067C431.69,20.038,411.65,0,387.021,0z M387.021,69.388c-13.631,0-24.72-11.089-24.72-24.72 c0-13.63,11.089-24.72,24.72-24.72c13.629,0,24.719,11.09,24.719,24.72C411.74,58.299,400.65,69.388,387.021,69.388z">
-                                                                            </path>
-                                                                            <path
-                                                                                d="M348.116,289.787c-1.812-8.523-4.166-16.875-7.131-25.075c-3.974-10.987-8.74-21.724-12.391-32.836 c-6.823-20.771,4.948-38.105,7.16-41.256c3.876-5.517,8.408-10.58,13.19-15.322c9.207-9.128,19.361-17.288,29.984-24.803 c-1.316-2.039-2.591-4.1-3.805-6.199c-15.279,5.99-93.854,33.452-91.938,94.121c0.384,12.162,5.083,23.737,7.979,35.526 c1.395,5.681,2.605,11.412,3.345,17.218c0.319,2.614,0.515,5.243,0.729,7.87c0.006-0.02,0.004-0.034-0.008-0.045 c0.007,0.076,0.202,8.326-0.164,11.9c-1.147,11.189-2.799,22.494-7.516,32.758c-4.387,9.543-11.006,17.842-19.193,24.402 c-18.716,14.994-43.514,20.988-66.913,23.398c-1.114,0.117-2.228,0.217-3.342,0.314l-41.779,86.152 c20.614-1.281,41.175-4.102,61.235-9.039c23.607-5.811,46.613-14.588,67.227-27.598c20.596-12.996,38.308-30.578,50.099-51.984 c12.335-22.391,17.277-48.038,16.225-73.452C350.752,307.156,349.928,298.307,348.116,289.787z">
-                                                                            </path>
-                                                                        </g>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </div>
-                                                        <div class="containerTextoInfo infoTempo">
-                                                            <div class="flexColumn">
-                                                                <strong>Distância </strong>
-                                                                <p> 3km </p>
-                                                            </div>
-                                                            <div class="flexColumn">
-                                                                <strong>Tempo Estimado </strong>
-                                                                <p> 3 min </p>
-                                                            </div>
-
+                                                        <div class="flexColumn">
+                                                            <strong>Ponto Referência </strong>
+                                                            <p> Perto da Venda do Rogério, onde há bla bla
+                                                                blsdsdsdsa onde há bla bla blsdsdsdsaonde há bla bla
+                                                                blsdsdsdsaonde há bla bla blsdsdsdsaonde há bla bla
+                                                                blsdsdsdsa</p>
                                                         </div>
 
                                                     </div>
 
                                                 </div>
+                                                <div class="info">
+                                                    <div class="iconeInfo">
+                                                        <svg fill="#000000" version="1.1" id="Capa_1"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                            viewBox="0 0 480.543 480.543" xml:space="preserve"
+                                                            width="30px" height="30px">
+                                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                            </g>
+                                                            <g id="SVGRepo_iconCarrier">
+                                                                <g>
+                                                                    <g>
+                                                                        <path
+                                                                            d="M225.278,278.426c0-48.641-39.572-88.213-88.214-88.213c-48.641,0-88.212,39.572-88.212,88.213 c0,14.254,3.401,27.727,9.431,39.654l78.781,162.463l78.795-162.488C221.88,306.133,225.278,292.669,225.278,278.426z M137.064,327.243c-26.917,0-48.817-21.9-48.817-48.817s21.9-48.817,48.817-48.817c26.918,0,48.817,21.9,48.817,48.817 S163.982,327.243,137.064,327.243z">
+                                                                        </path>
+                                                                        <path
+                                                                            d="M387.021,0c-24.63,0-44.669,20.038-44.669,44.668c0,7.218,1.723,14.04,4.776,20.081l39.893,82.267l39.899-82.28 c3.049-6.037,4.77-12.855,4.77-20.067C431.69,20.038,411.65,0,387.021,0z M387.021,69.388c-13.631,0-24.72-11.089-24.72-24.72 c0-13.63,11.089-24.72,24.72-24.72c13.629,0,24.719,11.09,24.719,24.72C411.74,58.299,400.65,69.388,387.021,69.388z">
+                                                                        </path>
+                                                                        <path
+                                                                            d="M348.116,289.787c-1.812-8.523-4.166-16.875-7.131-25.075c-3.974-10.987-8.74-21.724-12.391-32.836 c-6.823-20.771,4.948-38.105,7.16-41.256c3.876-5.517,8.408-10.58,13.19-15.322c9.207-9.128,19.361-17.288,29.984-24.803 c-1.316-2.039-2.591-4.1-3.805-6.199c-15.279,5.99-93.854,33.452-91.938,94.121c0.384,12.162,5.083,23.737,7.979,35.526 c1.395,5.681,2.605,11.412,3.345,17.218c0.319,2.614,0.515,5.243,0.729,7.87c0.006-0.02,0.004-0.034-0.008-0.045 c0.007,0.076,0.202,8.326-0.164,11.9c-1.147,11.189-2.799,22.494-7.516,32.758c-4.387,9.543-11.006,17.842-19.193,24.402 c-18.716,14.994-43.514,20.988-66.913,23.398c-1.114,0.117-2.228,0.217-3.342,0.314l-41.779,86.152 c20.614-1.281,41.175-4.102,61.235-9.039c23.607-5.811,46.613-14.588,67.227-27.598c20.596-12.996,38.308-30.578,50.099-51.984 c12.335-22.391,17.277-48.038,16.225-73.452C350.752,307.156,349.928,298.307,348.116,289.787z">
+                                                                        </path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="containerTextoInfo">
+                                                        <div class="flexColumn">
+                                                            <strong>Distância </strong>
+                                                            <p> 3km </p>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="iconeInfo">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                            width="30" height="30" fill="none" stroke="black"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
+                                                            </path>
+                                                            <circle cx="9" cy="7" r="4"></circle>
+                                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="containerTextoInfo">
+                                                        <div class="flexColumn">
+                                                            <strong>Número de Vítimas: </strong>
+                                                            <p> 3</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="iconeInfo ">
+                                                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="30"
+                                                            height="30" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <circle cx="12" cy="12" r="10"></circle>
+                                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="containerTextoInfo">
+                                                        <strong>Tempo Estimado </strong>
+                                                        <p> 3 min </p>
+                                                    </div>
+                                                </div>
+
+
                                             </div>
                                         </div>
-                                        <div class="detalhesAmbulancia padraoFundo">
-                                            <div>
+                                        <div class="detalhesAmbulancia flexColumn padraoFundo">
+                                            <div class="titulo">
+                                                <strong>Unidades Para Atendimento</strong>
+                                            </div>
+                                            <div class="flex fgrow1 gap-4">
+                                                <div class="flexColumn fgrow-1">
+                                                    <div class="flex unidadeEscolhida p-2 br-1 padraoFundo">
+                                                        <div class="iconeInfo">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                                width="30" height="30" fill="none" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="icone-ambulancia">
+                                                                <!-- Corpo traseiro da ambulância -->
+                                                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11h2" />
 
+                                                                <!-- Cabine frontal -->
+                                                                <path d="M18 18h2V11l-3-4h-3v11" />
+
+                                                                <!-- Roda traseira -->
+                                                                <circle cx="8" cy="18" r="2" />
+
+                                                                <!-- Roda dianteira -->
+                                                                <circle cx="16" cy="18" r="2" />
+
+                                                                <!-- Chassi (linha entre as rodas) -->
+                                                                <path d="M10 18h4" />
+
+                                                                <!-- Cruz Médica (Horizontal e Vertical) -->
+                                                                <path d="M6 11h4" />
+                                                                <path d="M8 9v4" />
+
+                                                                <!-- Sirene no teto -->
+                                                                <path d="M7 4V2h2v2" />
+                                                            </svg>
+
+                                                        </div>
+                                                        <div class="containerTextoInfo"> [UTI Móvel 01] - Enviada </div>
+                                                    </div>
+                                                    <div class="flex p-2 padraoFundo br-1">
+                                                        <div class="iconeInfo">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                                width="30" height="30" fill="none" stroke="black"
+                                                                stroke-width="2" stroke-linecap="round"
+                                                                stroke-linejoin="round" class="icone-ambulancia">
+                                                                <!-- Corpo traseiro da ambulância -->
+                                                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11h2" />
+
+                                                                <!-- Cabine frontal -->
+                                                                <path d="M18 18h2V11l-3-4h-3v11" />
+
+                                                                <!-- Roda traseira -->
+                                                                <circle cx="8" cy="18" r="2" />
+
+                                                                <!-- Roda dianteira -->
+                                                                <circle cx="16" cy="18" r="2" />
+
+                                                                <!-- Chassi (linha entre as rodas) -->
+                                                                <path d="M10 18h4" />
+
+                                                                <!-- Cruz Médica (Horizontal e Vertical) -->
+                                                                <path d="M6 11h4" />
+                                                                <path d="M8 9v4" />
+
+                                                                <!-- Sirene no teto -->
+                                                                <path d="M7 4V2h2v2" />
+                                                            </svg>
+
+                                                        </div>
+                                                        <div class="containerTextoInfo"> [UTI Móvel 01 - Na Base] </div>
+                                                    </div>
+                                                    <div class="flex p-2 padraoFundo br-1">
+                                                        <div class="iconeInfo">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                                width="30" height="30" fill="none" stroke="black"
+                                                                stroke-width="2" stroke-linecap="round"
+                                                                stroke-linejoin="round" class="icone-ambulancia">
+                                                                <!-- Corpo traseiro da ambulância -->
+                                                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11h2" />
+
+                                                                <!-- Cabine frontal -->
+                                                                <path d="M18 18h2V11l-3-4h-3v11" />
+
+                                                                <!-- Roda traseira -->
+                                                                <circle cx="8" cy="18" r="2" />
+
+                                                                <!-- Roda dianteira -->
+                                                                <circle cx="16" cy="18" r="2" />
+
+                                                                <!-- Chassi (linha entre as rodas) -->
+                                                                <path d="M10 18h4" />
+
+                                                                <!-- Cruz Médica (Horizontal e Vertical) -->
+                                                                <path d="M6 11h4" />
+                                                                <path d="M8 9v4" />
+
+                                                                <!-- Sirene no teto -->
+                                                                <path d="M7 4V2h2v2" />
+                                                            </svg>
+
+                                                        </div>
+                                                        <div class="containerTextoInfo"> [UTI Móvel 01 - Na Base] </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flexColumn flex-center w-auto fgrow1">
+                                                    <div class="iconeInfo">
+                                                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="30"
+                                                            height="30" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                            <circle cx="12" cy="12" r="10"></circle>
+                                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="text-center">Horário previsto para a chegada da
+                                                        unidade: <br>
+                                                        19:45</div>
+                                                </div>
+                                            </div>
+                                            <div class="botao red a-self-end">
+                                                Cancelar Envio
                                             </div>
                                         </div>
                                     </div>
@@ -385,7 +435,7 @@
                     </div>
                     <div class="cardEmergencia">
                         <div class="marcadorGravidade grave">
-                            <div class="triangulo"></div>
+                            <div></div>
                         </div>
 
                         <div class="conteudoCard">
@@ -527,10 +577,6 @@
                                 <label class="botaoDetalhe" for="modal1">
                                     <t class="textoDetalhes">Verificar Detalhes</t>
                                 </label>
-                                <!-- <div class="esmaeceTela"></div> -->
-                                <!-- <div class="containerImagemDetalhes">
-                                <img class="imagemDetalhes" src="../../static/images/more-info-icon.png">
-                            </div> -->
                             </div>
                         </div>
 
