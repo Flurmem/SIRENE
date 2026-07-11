@@ -807,12 +807,13 @@ header {
 }
 
 .containerPaginaInicial{
-    width: 35%;
+    width: 50%;
     position: relative;
     left: auto;
     height: 95%;
     border-radius: 0px 10px 10px 0;
     padding: 2rem;
+    box-shadow: 0px 0px 10px 0px rgb(118, 118, 118);
 }
 
 
@@ -886,15 +887,12 @@ header {
     gap: .4rem;
 }
 
-.containerCampo>* {
-    width: 100%;
-}
 
 .containerCampo p {
     font-weight: bold;
 }
 
-.containerCampo>div>input {
+.containerCampo>div>input, .caixaTexto, select {
     padding: 1rem;
     border: none;
     flex: 1;
@@ -903,6 +901,7 @@ header {
     border-radius: 10px;
     height: 2.5rem;
     width: 100%;
+    cursor: pointer;
 }
 
 .containerBotaoConfirma {
@@ -1321,7 +1320,7 @@ label{
 }
 
 .letraMedia{
-    font-size: 35px;
+    font-size: 30px;
 }
 
 @keyframes goDownShows {
@@ -1358,6 +1357,7 @@ label{
 
 .fundoBorrado{
     backdrop-filter: blur(5px);
+    background-color: #1f29374a;
     position: absolute;
     top: 0;
     left: 0;
@@ -1367,7 +1367,7 @@ label{
 .borrado{
     position: relative;
     z-index: -2;
-    opacity: 1;
+    opacity: .7;
 }
 .p-fixed{
     position: fixed;
@@ -1381,7 +1381,6 @@ label{
     background-color: rgb(232, 232, 232);
     border-radius: 10px 0 0 10px;
     padding: 2rem;
-    border: 2px solid #2A9D8F;
 }
 
 .azul{
@@ -1392,13 +1391,42 @@ label{
     border-bottom: 1px solid rgb(207, 207, 207);
 }
 
-#coordendas:checked + botao{
-    display: none;
-
-}
-
 .branco{
     background-color: white;
     color: black;
-    border: 1px solid #5386E4;
+    border: 1px solid #2a9d9048;
+}
+
+.w-40{
+    width: 40%;
+}
+
+.fundoSirene{
+    background-color: #2A9D8F;
+    color: white;
+}
+
+.nova{
+    background-color: black;
+}
+
+#coordenadas:checked ~ .containerPaginaInicial > div > form >.containerCampos > .coordenadas {
+    display: flex;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.pb-3{
+    padding-bottom: 3rem;
+}
+
+.coordenadas{
+    display: none;
+}
+
+.dropdown{
+    padding: 0 1rem;
+    
 }

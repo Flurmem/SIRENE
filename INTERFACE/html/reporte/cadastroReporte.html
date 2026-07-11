@@ -25,22 +25,19 @@
             </div>
         </div>
         <input type="checkbox" class="escondido" id="coordenadas">
-        <div class="complementoReporte flexColumn flex-center">
-
+        <div class="complementoReporte fundoSirene flexColumn flex-center">
 
             <div class="">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none"
-                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                 </svg>
             </div>
             <p>O GPS está indisponível?</p>
-            <label class="botao branco">Clique aqui</label>
-
-            <!-- <label for="noGps">Não possui GPS?</label> -->
+            <label class="botao azul" for="coordenadas">Clique aqui</label>
         </div>
-        <div class="containerPaginaInicial">
+        <div class="containerPaginaInicial branco padraoFundo w-40">
             <div class="flex-center flexColumn w-100">
 
                 <div class="tituloForm ">
@@ -51,7 +48,7 @@
                     <div class="containerCampos">
                         <div class="containerCampo">
 
-                            <label class="botao azul flex-center gap-1  w-100" for="coordenadas">
+                            <label class="botao azul flex-center gap-1  w-100">
                                 <div class="">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
                                         fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -64,20 +61,39 @@
                             </label>
 
                         </div>
+                        <div class="containerCampo coordenadas flex-row w-100 bdbtm pb-3">
+                            <div class="flex-center flexColumn">
+                                <p>Latitude</p>
+                                <div>
+                                    <input type="text" name="latitude" id="latitude" placeholder="Ex:"
+                                        class="caixaTexto">
+                                </div>
+                            </div>
+                            <div class="flex-center flexColumn">
+                                <p>Longitude</p>
+                                <div>
+                                    <input class="caixaTexto" type="text" name="longitude" id="longitude"
+                                        placeholder="Ex: ">
+                                </div>
+                            </div>
+                        </div>
                         <div class="containerCampo">
                             <p>Número de Vítimas</p>
-                            <div>
+                            <div class="w-100">
                                 <input type="text" name="nVitimas" id="nVitimas" placeholder="Ex: 1, 2, 3">
                             </div>
                         </div>
                         <div class="containerCampo">
-                            <p>Gravidade do Acidente</p>
-                            <div>
-                                <input type="text" name="gravidade" id="gravidade"
-                                    placeholder="Ex: Grave, Leve ou Moderado">
+                            <div class="w-100">
+                                <label for="gravidade" ><p>Gravidade do Acidente</p></label>
+
+                                <select class="dropdown dosis"  name="gravidade" id="gravidade">
+                                    <option class="dosis" value="Grave">Grave</option>
+                                    <option class='dosis' value="Moderado">Moderado</option>
+                                    <option class='dosis' value="Leve">Leve</option>
+                                </select>
                             </div>
                         </div>
-
                     </div>
                     <div class="containerBotaoConfirma">
                         <button class="botaoConfirmafVerde" style="box-shadow: none; border: white 1xp solid;">
