@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Hospital</title>
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <div class="fgrow1 flex-center gap-2 w-100">
+        <div class="p-fixed w-100 h-100">
+            <div class="p-relative w-100 h-100">
+                <img class="borrado w-100" src="../../static/images/hospital_fundo.jpg">
+                <div class="w-100 h-100 fundoBorrado">
+                </div>
+            </div>
+        </div>
+        <input type="checkbox" id="noGps" class="escondido">
+        <div class="complementoReporte flexColumn flex-center">
+            <div class="iconeInfo"></div>
+            <!-- <label for="noGps">Não possui GPS?</label> -->
+        </div>
+        <div class="containerPaginaInicial">
+            <div class="flex-center flexColumn fgrow1 w-100">
+
+                <div class="tituloForm ">
+                    <p class="dosis letraMedia">  Reporte de Acidente </p>
+                </div>
+
+                <form class="containerForm">
+                    <div class="containerCampos">
+                        <div class="containerCampo">
+                            <input type="checkbox" class="escondido" id="coordenadas">
+                            <label class="botao azul flex-center gap-1  w-100" for="coordenadas">
+                                <div class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30"
+                                        fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                Utilizar GPS para determinar a localização
+                            </label>
+
+                        </div>
+                        <div class="containerCampo">
+                            <p>Número de Vítimas</p>
+                            <div>
+                                <input type="text" name="nVitimas" id="nVitimas" placeholder="Ex: 1, 2, 3">
+                            </div>
+                        </div>
+                        <div class="containerCampo">
+                            <p>Gravidade do Acidente</p>
+                            <div>
+                                <input type="text" name="gravidade" id="gravidade"
+                                    placeholder="Ex: Grave, Leve ou Moderado">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="containerBotaoConfirma">
+                        <button class="botaoConfirmafVerde" style="box-shadow: none; border: white 1xp solid;">
+                            <div class="icon"></div>
+                            <p> Enviar </p>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -50,6 +50,10 @@ body {
 
 }
 
+.dosis{
+    font-family: Dosis, sans-serif;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -122,13 +126,15 @@ header {
 }
 
 .logo {
+    text-align: center;
+    width: 100%;
     padding: .1rem 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     font-family: 'Krona One';
-    flex: 1;
+    /* flex: 1; */
 }
 
 .fonteLogo {
@@ -782,7 +788,7 @@ header {
     z-index: 10;
 }
 
-.containerComplementarCadastro {
+.containerComplementarCadastro, .containerPaginaInicial {
     background-color: #2A9D8F;
     width: 50%;
     height: 100%;
@@ -798,6 +804,15 @@ header {
     gap: 2rem;
     color: white;
     z-index: 200;
+}
+
+.containerPaginaInicial{
+    width: 35%;
+    position: relative;
+    left: auto;
+    height: 95%;
+    border-radius: 0px 10px 10px 0;
+    padding: 2rem;
 }
 
 
@@ -884,7 +899,6 @@ header {
     border: none;
     flex: 1;
     background-color: #f1f1f1;
-    box-shadow: 1px 0px 20px 0px #f7f7f7;
     border: 1px solid rgb(239, 239, 239);
     border-radius: 10px;
     height: 2.5rem;
@@ -896,16 +910,19 @@ header {
     padding: 1rem;
 }
 
-.botaoConfirma {
+h1{
+    font-family: 'Dosis', sans-serif !important;
+}
+
+.botaoConfirma, .botaoConfirmafVerde {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: none;
+    border: white 1px solid;
     border-radius: 15px;
     background-color: #2A9D8F;
-    box-shadow: 1px 3px 20px 2px #e4e4e4;
     color: white;
 
     height: 3rem;
@@ -913,6 +930,12 @@ header {
     padding: 1.5rem;
     cursor: pointer;
     transition: transform 0.2s ease-out;
+}
+
+.botaoConfirmafVerde:hover{
+    transform: scale(1.2);
+    background-color: #5386E4;
+    /* color: #2A9D8F; */
 }
 
 .botaoConfirma:hover{
@@ -1092,6 +1115,8 @@ header {
 }
 
 .fundoEsmaecido{
+    top: 0;
+    left: 0;
     background-color: rgb(63, 63, 63);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
@@ -1111,7 +1136,7 @@ header {
 
 .conteudoModal{
     width: 95%;
-    height: 90%;
+    height: 95%;
     background-color: rgb(245, 245, 245);
     z-index: 2;
     padding: 2rem;
@@ -1158,15 +1183,17 @@ label{
     /* flex-direction: column; */
     gap: 1rem;
     flex: 1;
+    min-height: 0;
 }
 
 
 .dadosEmergencia{
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     /* flex: 1; */
     gap: 1rem;
+    min-height: 0;
 }
 
 .dadosEmergencia > *{
@@ -1287,4 +1314,85 @@ label{
 
 .gap-4{
     gap: 4rem;
+}
+
+.letraGrande{
+    font-size: 40px;
+}
+
+.letraMedia{
+    font-size: 35px;
+}
+
+@keyframes goDownShows {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes goUpShows {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
+}
+
+.goDown{
+    animation: goDownShows 0.6s ease-in-out;
+}
+
+.goUp{
+    animation:  goUpShows 0.6s ease-in-out;
+}
+
+.fundoBorrado{
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.borrado{
+    position: relative;
+    z-index: -2;
+    opacity: 1;
+}
+.p-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.complementoReporte{
+    height: 95%;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+    padding: 2rem;
+    border: 2px solid #2A9D8F;
+}
+
+.azul{
+    background-color: #5386E4;
+}
+
+.bdbtm{
+    border-bottom: 1px solid rgb(207, 207, 207);
+}
+
+#coordendas:checked + botao{
+    display: none;
+
 }
