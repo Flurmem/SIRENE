@@ -1388,7 +1388,7 @@ label{
 }
 
 .bdbtm{
-    border-bottom: 1px solid rgb(207, 207, 207);
+    border-bottom: 1px dotted rgb(0, 0, 0);
 }
 
 .branco{
@@ -1429,4 +1429,63 @@ label{
 .dropdown{
     padding: 0 1rem;
     
+}
+
+.s-btw{
+    display: flex;
+    justify-content: space-between;
+}
+
+.circuloTimeline{
+    position: relative;
+    border-radius: 50px;
+    width: 1.3rem;
+    aspect-ratio: 1;
+    background-color: #2A9D8F;
+    z-index: 2;
+}
+
+.colunaCirculo{
+    position: relative;
+    width: 3rem;
+}
+
+.itemTimeline{
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.colunaCirculo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #000000;
+    z-index: 1;
+}
+
+.itemTimeline[etapaConcluida="1"] > .colunaCirculo > .circuloTimeline{
+    background-color: #2A9D8F;
+}
+
+.itemTimeline[etapaConcluida="0"] > .colunaCirculo > .circuloTimeline{
+    background-color: red;
+}
+/* 
+.itemTimeline[etapaConcluida="0"]{
+    opacity: .3;
+} */
+
+.stretch{
+    align-items: stretch !important;
+}
+
+.g-0{
+    gap: 0;
 }

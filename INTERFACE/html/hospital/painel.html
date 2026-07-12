@@ -306,124 +306,95 @@
 
                                             </div>
                                         </div>
-                                        <div class="detalhesAmbulancia flexColumn padraoFundo">
+                                        <div class="detalhesAmbulancia flex-start flexColumn fgrow1 padraoFundo">
                                             <div class="titulo">
-                                                <strong>Unidades Para Atendimento</strong>
+                                                <strong>Status do Atendimento</strong>
                                             </div>
-                                            <div class="flex fgrow1 gap-4">
-                                                <div class="flexColumn fgrow-1">
-                                                    <div class="flex p-2 br-1 padraoFundo unidadeEscolhida" escolhida=1>
-                                                        <div class="iconeInfo">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="30" height="30" fill="none" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="icone-ambulancia">
-                                                                <!-- Corpo traseiro da ambulância -->
-                                                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11h2" />
-
-                                                                <!-- Cabine frontal -->
-                                                                <path d="M18 18h2V11l-3-4h-3v11" />
-
-                                                                <!-- Roda traseira -->
-                                                                <circle cx="8" cy="18" r="2" />
-
-                                                                <!-- Roda dianteira -->
-                                                                <circle cx="16" cy="18" r="2" />
-
-                                                                <!-- Chassi (linha entre as rodas) -->
-                                                                <path d="M10 18h4" />
-
-                                                                <!-- Cruz Médica (Horizontal e Vertical) -->
-                                                                <path d="M6 11h4" />
-                                                                <path d="M8 9v4" />
-
-                                                                <!-- Sirene no teto -->
-                                                                <path d="M7 4V2h2v2" />
-                                                            </svg>
-
-                                                        </div>
-                                                        <div class="containerTextoInfo"> [UTI Móvel 01] - Enviada </div>
+                                            <div class="timeline flexColumn stretch fgrow1 p-1 g-0">
+                                                <div class="itemTimeline" etapaConcluida="1">
+                                                    <div class="colunaCirculo flex-center">
+                                                        <div class="circuloTimeline"></div>
                                                     </div>
-                                                    <div class="flex p-2 padraoFundo br-1 ambulancia">
-                                                        <div class="iconeInfo">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="30" height="30" fill="none" stroke="black"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round" class="icone-ambulancia">
-                                                                <!-- Corpo traseiro da ambulância -->
-                                                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11h2" />
+                                                    <div class="statusTimeline fgrow1 flexstart s-btw">
+                                                        <div class="flexColumn stretch fgrow1">
+                                                            <div class="fgrow1 flex">
+                                                                <p> <strong>Em verificação</strong></p>
+                                                                <div class="fgrow1 bdbtm h-100"></div>
+                                                            </div>
 
-                                                                <!-- Cabine frontal -->
-                                                                <path d="M18 18h2V11l-3-4h-3v11" />
-
-                                                                <!-- Roda traseira -->
-                                                                <circle cx="8" cy="18" r="2" />
-
-                                                                <!-- Roda dianteira -->
-                                                                <circle cx="16" cy="18" r="2" />
-
-                                                                <!-- Chassi (linha entre as rodas) -->
-                                                                <path d="M10 18h4" />
-
-                                                                <!-- Cruz Médica (Horizontal e Vertical) -->
-                                                                <path d="M6 11h4" />
-                                                                <path d="M8 9v4" />
-
-                                                                <!-- Sirene no teto -->
-                                                                <path d="M7 4V2h2v2" />
-                                                            </svg>
-
+                                                            <p>O sistema está analisando os dados</p>
                                                         </div>
-                                                        <div class="containerTextoInfo"> [UTI Móvel 01 - Na Base] </div>
-                                                    </div>
-                                                    <div class="flex p-2 padraoFundo br-1 ambulancia">
-                                                        <div class="iconeInfo">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="30" height="30" fill="none" stroke="black"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round" class="icone-ambulancia">
-                                                                <!-- Corpo traseiro da ambulância -->
-                                                                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11h2" />
-
-                                                                <!-- Cabine frontal -->
-                                                                <path d="M18 18h2V11l-3-4h-3v11" />
-
-                                                                <!-- Roda traseira -->
-                                                                <circle cx="8" cy="18" r="2" />
-
-                                                                <!-- Roda dianteira -->
-                                                                <circle cx="16" cy="18" r="2" />
-
-                                                                <!-- Chassi (linha entre as rodas) -->
-                                                                <path d="M10 18h4" />
-
-                                                                <!-- Cruz Médica (Horizontal e Vertical) -->
-                                                                <path d="M6 11h4" />
-                                                                <path d="M8 9v4" />
-
-                                                                <!-- Sirene no teto -->
-                                                                <path d="M7 4V2h2v2" />
-                                                            </svg>
-
-                                                        </div>
-                                                        <div class="containerTextoInfo"> [UTI Móvel 01 - Na Base] </div>
+                                                        <p id="horarioStatus">19:42</p>
                                                     </div>
                                                 </div>
-                                                <div class="flexColumn flex-center w-auto fgrow1">
-                                                    <div class="iconeInfo">
-                                                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="30"
-                                                            height="30" viewBox="0 0 24 24" fill="none"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round">
-                                                            <circle cx="12" cy="12" r="10"></circle>
-                                                            <polyline points="12 6 12 12 16 14"></polyline>
-                                                        </svg>
+                                                <div class="itemTimeline" etapaConcluida="1">
+                                                    <div class="colunaCirculo flex-center">
+                                                        <div class="circuloTimeline"></div>
                                                     </div>
-                                                    <div class="text-center">Horário previsto para a chegada da
-                                                        unidade: <br>
-                                                        19:45</div>
+                                                    <div class="statusTimeline fgrow1 flexstart s-btw">
+                                                        <div class="flexColumn stretch fgrow1">
+                                                            <div class="fgrow1 flex">
+                                                                <p> <strong>Despachado</strong></p>
+                                                                <div class="fgrow1 bdbtm h-100"></div>
+                                                            </div>
+
+                                                            <p>O sistema está analisando os dados</p>
+                                                        </div>
+                                                        <p id="horarioStatus">19:42</p>
+                                                    </div>
                                                 </div>
+                                                <div class="itemTimeline" etapaConcluida="1">
+                                                    <div class="colunaCirculo flex-center">
+                                                        <div class="circuloTimeline"></div>
+                                                    </div>
+                                                    <div class="statusTimeline fgrow1 flexstart s-btw">
+                                                        <div class="flexColumn stretch fgrow1">
+                                                            <div class="fgrow1 flex">
+                                                                <p> <strong>No Local</strong></p>
+                                                                <div class="fgrow1 bdbtm h-100"></div>
+                                                            </div>
+
+                                                            <p>O sistema está analisando os dados</p>
+                                                        </div>
+                                                        <p id="horarioStatus">19:42</p>
+                                                    </div>
+                                                </div>
+                                                <div class="itemTimeline" etapaConcluida="0">
+                                                    <div class="colunaCirculo flex-center">
+                                                        <div class="circuloTimeline"></div>
+                                                    </div>
+                                                    <div class="statusTimeline fgrow1 flexstart s-btw">
+                                                        <div class="flexColumn stretch fgrow1">
+                                                            <div class="fgrow1 flex">
+                                                                <p> <strong>Retornando</strong></p>
+                                                                <div class="fgrow1 bdbtm h-100"></div>
+                                                            </div>
+
+                                                            <p>O sistema está analisando os dados</p>
+                                                        </div>
+                                                        <p id="horarioStatus">19:42</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="itemTimeline" etapaConcluida="0">
+                                                    <div class="colunaCirculo flex-center">
+                                                        <div class="circuloTimeline"></div>
+                                                    </div>
+                                                    <div class="statusTimeline fgrow1 flexstart s-btw">
+                                                        <div class="flexColumn stretch fgrow1">
+                                                            <div class="fgrow1 flex">
+                                                                <p> <strong>Concluido</strong></p>
+                                                                <div class="fgrow1 bdbtm h-100"></div>
+                                                            </div>
+
+                                                            <p>O sistema está analisando os dados</p>
+                                                        </div>
+                                                        <p id="horarioStatus">19:42</p>
+                                                    </div>
+                                                </div>
+                                                
                                             </div>
+
                                             <div class="botao red a-self-end">
                                                 Cancelar Envio
                                             </div>
