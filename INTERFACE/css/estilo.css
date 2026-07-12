@@ -1438,11 +1438,15 @@ label{
 
 .circuloTimeline{
     position: relative;
-    border-radius: 50px;
-    width: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 1.5rem;
     aspect-ratio: 1;
-    background-color: #2A9D8F;
+    /* object-fit: cover; */
     z-index: 2;
+    box-shadow: 1px 3px 4px 0px rgb(172, 172, 172);
 }
 
 .colunaCirculo{
@@ -1455,6 +1459,7 @@ label{
     align-items: stretch;
     justify-content: start;
     gap: 1rem;
+    height: 3rem;
 }
 
 .colunaCirculo::before{
@@ -1471,16 +1476,34 @@ label{
 }
 
 .itemTimeline[etapaConcluida="1"] > .colunaCirculo > .circuloTimeline{
-    background-color: #2A9D8F;
+    background-color: #f0f0f0;
 }
 
 .itemTimeline[etapaConcluida="0"] > .colunaCirculo > .circuloTimeline{
     background-color: red;
 }
-/* 
-.itemTimeline[etapaConcluida="0"]{
-    opacity: .3;
-} */
+
+.itemTimeline[etapaConcluida="0"] > .statusTimeline > div > .mensagem{
+    display: none;
+}
+
+.itemTimeline[etapaConcluida="0"] > .statusTimeline > p{
+    display: none;
+}
+
+.itemTimeline[etapaConcluida="0"] > .statusTimeline > div > div > div{
+    display: none;
+}
+
+.itemTimeline[etapaConcluida="0"] > .statusTimeline{
+    flex: 0;
+}
+
+
+
+[etapaConcluida="1"]:not(:has(~ [etapaConcluida="1"])) > .colunaCirculo > .circuloTimeline {
+    background-color: #5386E4;
+}
 
 .stretch{
     align-items: stretch !important;
